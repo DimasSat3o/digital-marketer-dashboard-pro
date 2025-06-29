@@ -9,7 +9,151 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      ads_reports: {
+        Row: {
+          cafe_id: string
+          clicks: number | null
+          conversions: number | null
+          cpc: number | null
+          created_at: string
+          ctr: number | null
+          id: string
+          impressions: number | null
+          month: number
+          platform: string
+          roas: number | null
+          updated_at: string
+          year: number
+        }
+        Insert: {
+          cafe_id: string
+          clicks?: number | null
+          conversions?: number | null
+          cpc?: number | null
+          created_at?: string
+          ctr?: number | null
+          id?: string
+          impressions?: number | null
+          month: number
+          platform: string
+          roas?: number | null
+          updated_at?: string
+          year: number
+        }
+        Update: {
+          cafe_id?: string
+          clicks?: number | null
+          conversions?: number | null
+          cpc?: number | null
+          created_at?: string
+          ctr?: number | null
+          id?: string
+          impressions?: number | null
+          month?: number
+          platform?: string
+          roas?: number | null
+          updated_at?: string
+          year?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ads_reports_cafe_id_fkey"
+            columns: ["cafe_id"]
+            isOneToOne: false
+            referencedRelation: "cafes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      cafes: {
+        Row: {
+          address: string | null
+          created_at: string
+          description: string | null
+          email: string | null
+          id: string
+          name: string
+          phone: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string
+          description?: string | null
+          email?: string | null
+          id?: string
+          name: string
+          phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          address?: string | null
+          created_at?: string
+          description?: string | null
+          email?: string | null
+          id?: string
+          name?: string
+          phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      content_reports: {
+        Row: {
+          cafe_id: string
+          caption: string | null
+          created_at: string
+          id: string
+          image_url: string | null
+          month: number
+          platform: string
+          post_date: string
+          status: string
+          updated_at: string
+          video_url: string | null
+          year: number
+        }
+        Insert: {
+          cafe_id: string
+          caption?: string | null
+          created_at?: string
+          id?: string
+          image_url?: string | null
+          month: number
+          platform: string
+          post_date: string
+          status?: string
+          updated_at?: string
+          video_url?: string | null
+          year: number
+        }
+        Update: {
+          cafe_id?: string
+          caption?: string | null
+          created_at?: string
+          id?: string
+          image_url?: string | null
+          month?: number
+          platform?: string
+          post_date?: string
+          status?: string
+          updated_at?: string
+          video_url?: string | null
+          year?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "content_reports_cafe_id_fkey"
+            columns: ["cafe_id"]
+            isOneToOne: false
+            referencedRelation: "cafes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
