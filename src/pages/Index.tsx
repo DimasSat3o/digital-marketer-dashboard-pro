@@ -59,7 +59,7 @@ const Index = () => {
           />
         );
       case "cafes":
-        return <CafeManagement />;
+        return <CafeManagement cafes={cafes} />;
       default:
         return (
           <DashboardOverview 
